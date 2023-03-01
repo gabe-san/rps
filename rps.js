@@ -10,31 +10,32 @@ function getComputerChoice() {
 
 //Need function to play one round of RPS. Two parameters: PlayerChoice and Computer Choice. Then Return a string that declares the Winner: You Win/lose. X beats X... Note that playerChoice should be case-insensitive for now.
 const computerSelection = getComputerChoice();
-const playerSelection = "Rock";
-function playRound (playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
+let playerSelection = "pApeR"; //will probably need to input from a div later on
+let playerChoice = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+function playRound (playerChoice, computerSelection) {
+    if (playerChoice === computerSelection) {
         return "Tie! Both chose the same";
     } 
-    else if (playerSelection == "Rock" && computerSelection == "Paper") {
+    else if (playerChoice == "Rock" && computerSelection == "Paper") {
         return "You lose! Paper beats rock";
     } 
-    else if (playerSelection == "Paper" && computerSelection == "Rock") {
+    else if (playerChoice == "Paper" && computerSelection == "Rock") {
         return "You won! Paper beats rock";
     }
-    else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+    else if (playerChoice == "Rock" && computerSelection == "Scissors") {
         return "You win! Rock beats scissors";
     } 
-    else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+    else if (playerChoice == "Scissors" && computerSelection == "Rock") {
         return "You lose! Rock beats scissors";
     }
-    else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+    else if (playerChoice == "Paper" && computerSelection == "Scissors") {
         return "You lose! Scissors beat paper";
     } else {
         return "You win! Scissors beat paper";
     }
 }
 
-//console.log(playerSelection)
-//console.log(computerSelection);
-//console.log(playRound(playerSelection, computerSelection));
+console.log(playerChoice)
+console.log(computerSelection);
+console.log(playRound(playerChoice, computerSelection));
 
