@@ -1,0 +1,33 @@
+html{
+    background-color: rgb(38, 38, 38);
+   
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+#rockbtn {
+    background-image: url("./images/rock.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    
+}
+#paperbtn{
+    background-image: url("./images/paper.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    
+}
+#scissorbtn{
+    background-image: url("./images/scissors.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    
+}
+#results{
+    color: white;
+}
