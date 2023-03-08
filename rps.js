@@ -1,5 +1,4 @@
-//Game starts with computer, thus create function that will return random string: "Rock", "Paper", " Scissors"
-//Make an function scope array with the choices, then use math.random * the length of the array to get return
+//use math.random * the length of the array to get return
 let playerScore = 0;
 let computerScore = 0;
 
@@ -24,21 +23,41 @@ function getComputerChoice() {
 
 
 
-//logic: 3 buttons = 3 choices
-// each button is 1 round and correctly applies playerChoice parameter for playRound();
+
 const rock = document.getElementById('rockbtn');
 const paper = document.getElementById('paperbtn');
 const scissors = document.getElementById('scissorbtn');
 const playerSign= document.getElementById('results');
+const playerScoreBox = document.getElementById('playerTally')
+const compScoreBox = document.getElementById('computerTally')
+
 
 rock.addEventListener('click', () => {
     playRound('Rock', getComputerChoice());
+    if (playerScore === 5 || computerScore === 5) {
+        rockbtn.setAttribute("disabled", 1)
+        paperbtn.setAttribute("disabled", 1)
+        scissorbtn.setAttribute("disabled", 1)
+        gameState();
+    }
 });
 paper.addEventListener('click', () => {
     playRound('Paper', getComputerChoice());
+    if (playerScore === 5 || computerScore === 5) {
+        rockbtn.setAttribute("disabled", 1)
+        paperbtn.setAttribute("disabled", 1)
+        scissorbtn.setAttribute("disabled", 1)
+        gameState();
+    }
 });
 scissors.addEventListener('click', () => {
     playRound('Scissors', getComputerChoice());
+    if (playerScore === 5 || computerScore === 5) {
+        rockbtn.setAttribute("disabled", 1)
+        paperbtn.setAttribute("disabled", 1)
+        scissorbtn.setAttribute("disabled", 1)
+        gameState();
+    }
 });
 
 function playRound (playerChoice, computerSelection) {
@@ -69,22 +88,29 @@ function playRound (playerChoice, computerSelection) {
         playerScore+= 1;
         playerSign.textContent = "You win! Scissors beat paper";
     }
+    compScoreBox.textContent = computerScore;
+    playerScoreBox.textContent = playerScore;
 }
 
 function gameState() {
-        if (playerScore === computerScore) {
-            return "Tie! Play again?";
-        } else if (playerScore > computerScore) {
-            return "You win! Play again?"
+        if (playerScore > computerScore) {
+            playerSign.innerHTML = '<button onclick="restartGame()">You win! Play again?"</button>';
         } else {
-            return "You lost! Play again?";
+            playerSign.innerHTML = '<button onclick="restartGame()">You lost! Play again?"</button>';
         }
     }
 
-//game();
-//console.log(playerScore);
-//console.log(computerScore);
-//console.log(gameState());
+function restartGame() {
+    playerScore = 0;
+    computerScore = 0;
+    compScoreBox.textContent = computerScore;
+    playerScoreBox.textContent = playerScore;
+    playerSign.innerHTML = "Can you defeat me?"
+    rockbtn.removeAttribute("disabled")
+    paperbtn.removeAttribute("disabled")
+    scissorbtn.removeAttribute("disabled")
+
+}
 
 
 

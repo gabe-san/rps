@@ -2,6 +2,14 @@ html{
     background-color: rgb(38, 38, 38);
    
 }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -10,24 +18,65 @@ html{
 #rockbtn {
     background-image: url("./images/rock.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 100px;
-    height: 100px;
+    height: 110px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 30px;
+    border-radius: 9px;
     
 }
 #paperbtn{
     background-image: url("./images/paper.png");
     background-size: contain;
     width: 100px;
-    height: 100px;
-    
+    height: 110px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 30px;
+    border-radius: 9px;
 }
 #scissorbtn{
     background-image: url("./images/scissors.png");
     background-size: contain;
     width: 100px;
-    height: 100px;
-    
+    height: 110px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 9px;
 }
 #results{
     color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 25px;
 }
+
+.players{
+    color: white;
+    font-size: 20px;
+}
+.computers{
+    color: red;
+    font-size: 20px;
+}
+.scoreHeader {
+    display:flex;
+    justify-content: space-evenly;
+}
+ .numberTally{
+    display:flex;
+    justify-content: space-evenly;
+ }

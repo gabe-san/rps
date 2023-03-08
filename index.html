@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>First to 5 points wins!</h1>
     <div class="container">
-        <!--<img class="background-image" src="./images/rock-paper-scissors-line-icons.svg" alt="rock-paper-scissors"> -->
         <button id="rockbtn">ROCK</button>
         <button id="paperbtn">PAPER</button>
         <button id="scissorbtn">SCISSORS</button>
     </div>
-    <div id="results"></div>
-    
+    <div id="results">Can you defeat me?</div>
+    <div class="scoreTableContainer">
+        <div class="scoreHeader">
+            <div class="players">YOUR SCORE</div>
+            <div class="computers">COMPUTER SCORE</div>
+        </div>
+        <div class="numberTally">
+            <div class="players" id="playerTally">0</div>
+            <div class="computers" id="computerTally">0</div>
+        </div>
+    </div>
 </body>
 <script src="rps.js"></script>
 </html>
